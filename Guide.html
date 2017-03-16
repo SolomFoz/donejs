@@ -304,7 +304,7 @@
 &lt;/html&gt;
 
 </code></pre>
-<p><span line-highlight='8,12-22'></span>
+<p><span line-highlight='6,10-20'></span>
 If you kept your browser window open at <a href="localhost:8080">http://localhost:8080/</a> you should see the updated styles and content as soon as you save the file.</p>
 <p><img src="static/img/donejs-bootstrap.png" alt="donejs add app" style="box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2); border-radius: 5px; border: 1px #E7E7E7 solid;" /></p>
 <p>Feel free to edit the HTML or <code>src/styles.less</code> to see how hot module swapping updates the page automatically.</p>
@@ -393,6 +393,11 @@ export default AppViewModel;
     &lt;div class=&quot;container&quot;&gt;
       &lt;div class=&quot;row&quot;&gt;
         &lt;div class=&quot;col-sm-8 col-sm-offset-2&quot;&gt;
+          &lt;h1 class=&quot;page-header text-center&quot;&gt;
+            &lt;img src=&quot;http://donejs.com/static/img/donejs-logo-white.svg&quot;
+                alt=&quot;DoneJS logo&quot; style=&quot;width: 100%;&quot; /&gt;
+            &lt;br&gt;Chat
+          &lt;/h1&gt;
           {{#eq page 'chat'}}
             &lt;can-import from=&quot;donejs-chat/messages/&quot;&gt;
               {{#if isPending}}
@@ -426,7 +431,7 @@ export default AppViewModel;
 &lt;/html&gt;
 
 </code></pre>
-<p><span line-highlight='15-31'></span>
+<p><span line-highlight='18-34'></span>
 Now each component is being dynamically loaded while navigating between the home and messages page.  You should see the changes already in your browser.</p>
 <p><img src="static/img/donejs-chat1.png" alt="chat.donejs.com" style="box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2); border-radius: 5px; border: 1px #E7E7E7 solid;" /></p>
 <p>Also, everything is <a href="Features.html#section=section_ServerSideRendered">rendered on the server</a>. If you reload the homepage at <a href="http://localhost:8080">localhost:8080</a> you'll see the page's content right away, while the JavaScript is loading in the background. Viewing the source will show the dynamically inserted styles and the corresponding HTML.</p>
