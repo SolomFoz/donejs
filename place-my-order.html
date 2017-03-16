@@ -229,7 +229,7 @@
 You will need <a href="http://nodejs.org">NodeJS</a> or <a href="https://iojs.org/en/index.html">io.js</a> installed and your code editor of choice.</p>
 <h3>Create the project</h3>
 <p>To get started, let's install the DoneJS command line utility globally:</p>
-<pre><code>npm install -g donejs
+<pre><code>npm install -g donejs@0.9
 </code></pre>
 <p>Then we can create a new DoneJS application:</p>
 <pre><code>donejs add app place-my-order
@@ -292,7 +292,7 @@ You will need <a href="http://nodejs.org">NodeJS</a> or <a href="https://iojs.or
 <h3>Setup a service API</h3>
 <p>Single page applications usually communicate with a RESTful API and a websocket connection for real-time updates. This guide will not cover how to create a REST API. Instead, we'll just install and start an existing service API created specifically for use with this tutorial:</p>
 <p><strong>Note</strong>: Kill the server for now while we install a few dependencies (ctrl+c on Windows and Mac).</p>
-<pre><code>npm install place-my-order-api --save
+<pre><code>npm install place-my-order-api@0.4 --save
 </code></pre>
 <p>Now we can add an API server start script into the <code>scripts</code> section of our <code>package.json</code> like this:</p>
 <pre><code class="language-js">  &quot;scripts&quot;: {
@@ -327,7 +327,7 @@ Now we can start the application with:</p>
 <p>Go to <a href="http://localhost:8080">http://localhost:8080</a> to see the &quot;hello world&quot; message again.</p>
 <h3>Loading assets</h3>
 <p>Before we get to the code, we also need to install the <code>place-my-order-assets</code> package which contains the images and styles specifically for this tutorial's application:</p>
-<pre><code>npm install place-my-order-assets --save
+<pre><code>npm install place-my-order-assets@0.1 --save
 </code></pre>
 <p>Every DoneJS application consists of at least two files:</p>
 <ol>
@@ -1240,7 +1240,7 @@ the following chapters.</p>
 </ul>
 <h2>Importing other projects</h2>
 <p>The NPM integration of StealJS makes it very easy to share and import other components. One thing we want to do when showing the <code>pmo-order-new</code> component is have a tab to choose between the lunch and dinner menu. The good news is that there is already a <a href="https://github.com/bitovi-components/bit-tabs">bit-tabs</a> component which does exactly that. Let's add it as a project dependency with:</p>
-<pre><code>npm install bit-tabs --save
+<pre><code>npm install bit-tabs@0.2 --save
 </code></pre>
 <p>And then integrate it into <code>src/order/new/new.stache</code>:</p>
 <pre><code class="language-html">&lt;can-import from=&quot;bit-tabs/unstyled&quot;/&gt;
@@ -1596,7 +1596,7 @@ QUnit.test('canPlaceOrder', function(){
 <p>can-connect makes it very easy to implement real-time functionality. It is capable of listening to notifications from the server when server data has been created, updated, or removed. This is usually accomplished via <a href="https://en.wikipedia.org/wiki/WebSocket">websockets</a>, which allow sending push notifications to a client.</p>
 <h3>Adding real-time events to a model</h3>
 <p>The <code>place-my-order-api</code> module uses the <a href="http://feathersjs.com/">Feathers</a> NodeJS framework, which in addition to providing a REST API, sends those events in the form of a websocket event like <code>orders created</code>. To make the order page update in real-time, all we need to do is add listeners for those events to <code>src/models/order.js</code> and in the handler notify the order connection.</p>
-<pre><code>npm install steal-socket.io --save
+<pre><code>npm install steal-socket.io@2 --save
 </code></pre>
 <p>In <code>src/models/order.js</code> replace with:</p>
 <pre><code class="language-js">import superMap from 'can-connect/can/super-map/';
@@ -1898,7 +1898,7 @@ We'll be building an iOS app if you are a Mac user, and an Android app if you're
 <p>We will use these tools to create an iOS application that can be tested in the iOS simulator.</p>
 <p>Windows users should install the <a href="https://developer.android.com/sdk/index.html">Android Studio</a>, which gives all of the tools we need. See the <a href="SettingUp.html#section=section_AndroidDevelopment">setting up guide</a> for full instructions on setting up your Android emulator.</p>
 <p>Now we can install the DoneJS Cordova tools with:</p>
-<pre><code>donejs add cordova
+<pre><code>donejs add cordova@0.2
 </code></pre>
 <p>Depending on your operating system you can accept most of the defaults, unless you would like to build for Android, which needs to be selected from the list of platforms.</p>
 <p>This will change your <code>build.js</code> script with the options needed to build iOS/Android apps. Open this file and add the place-my-order-asset images to the <strong>glob</strong> property:</p>
@@ -2037,7 +2037,7 @@ To run the Cordova build and launch the simulator we can now run:</p>
 <p>If everything went well, we should see the emulator running our application.</p>
 <h3>Building to NW.js</h3>
 <p>To set up the desktop build, we have to add it to our application like this:</p>
-<pre><code>donejs add nw
+<pre><code>donejs add nw@0.2
 </code></pre>
 <p>We can answer most prompts with the default except for the version which needs to be set to the latest <strong>stable version</strong>. Set the version prompt to <code>0.12.3</code>.</p>
 <p>Like with Cordova, we need to add the place-my-order-assets images to the build, open your <code>build.js</code> script and update the <strong>glob</strong> property to reflect:</p>
@@ -2097,7 +2097,7 @@ StealTools will find all of the assets you reference in your CSS and copy them t
 <p>When you deploy for the first time it will ask you to authorize with your login information, but first we need to configure the project.</p>
 <h4>Configuring DoneJS</h4>
 <p>With the Firebase account and application in place we can add the deployment configuration to our project like this:</p>
-<pre><code>donejs add firebase
+<pre><code>donejs add firebase@1
 </code></pre>
 <p>When prompted, enter the name of the application created when you set up the Firebase app. Next, login to the firebase app for the first time by running:</p>
 <pre><code>node_modules/.bin/firebase login
@@ -2292,7 +2292,7 @@ git push origin continuous
 	
 
 	<script type="text/javascript">
-		var docObject = {"type":"page","name":"place-my-order","src":"docs/guides/place-my-order.md","description":"In this guide you will learn about all of [DoneJS' features]() by creating, testing, documenting, building and deploying [place-my-order.com](http://place-my-order.com), a restaurant menu and ordering application. The final result will look like this: \n\n<img src=\"/static/img/place-my-order.png\" srcset=\"/static/img/place-my-order.png 1x, /static/img/place-my-order-2x.png 2x\">\n\n\nAfter the initial application setup, which includes a server that hosts and pre-renders the application, we will create several custom elements and bring them together using the application state and routes. Then we will learn how to retrieve data from the server using a RESTful API.\n\nAfter that we will talk about what a view model is and how to identify, implement and test its functionality. Once we have unit tests running in the browser, we will automate running them locally from the command line and also on a continuous integration server. In the subsequent chapters, we will show how to easily import other modules into our application and how to set up a real-time connection.\n\nFinally, we will describe how to build and deploy our application to the web, as a desktop application with nw.js, and as a mobile app with Cordova.","title":"In depth guide","parent":"DoneJS","hideSidebar":true,"outline":{"depth":2,"tag":"ol"},"comment":" ","glob":{"pattern":"docs/**/*.{md,mustache}","ignore":"{node_modules,bower_components}/**/*","cwd":"/Library/WebServer/Documents/GitHub/donejs"},"dest":"/Library/WebServer/Documents/GitHub/donejs/site","ignoreTemplateRender":true,"templates":"/Library/WebServer/Documents/GitHub/donejs/docs/theme/templates","static":"/Library/WebServer/Documents/GitHub/donejs/docs/theme/static","forceBuild":true,"generators":["html"],"docConfigDest":"../documentjs.json","project":{}};
+		var docObject = {"type":"page","name":"place-my-order","src":"docs/guides/place-my-order.md","description":"In this guide you will learn about all of [DoneJS' features]() by creating, testing, documenting, building and deploying [place-my-order.com](http://place-my-order.com), a restaurant menu and ordering application. The final result will look like this: \n\n<img src=\"/static/img/place-my-order.png\" srcset=\"/static/img/place-my-order.png 1x, /static/img/place-my-order-2x.png 2x\">\n\n\nAfter the initial application setup, which includes a server that hosts and pre-renders the application, we will create several custom elements and bring them together using the application state and routes. Then we will learn how to retrieve data from the server using a RESTful API.\n\nAfter that we will talk about what a view model is and how to identify, implement and test its functionality. Once we have unit tests running in the browser, we will automate running them locally from the command line and also on a continuous integration server. In the subsequent chapters, we will show how to easily import other modules into our application and how to set up a real-time connection.\n\nFinally, we will describe how to build and deploy our application to the web, as a desktop application with nw.js, and as a mobile app with Cordova.","title":"In depth guide","parent":"DoneJS","hideSidebar":true,"outline":{"depth":2,"tag":"ol"},"comment":" ","glob":{"pattern":"docs/**/*.{md,mustache}","ignore":"{node_modules,bower_components}/**/*","cwd":"/Users/kevin/dev/donejs"},"dest":"/Users/kevin/dev/donejs/site","ignoreTemplateRender":true,"templates":"/Users/kevin/dev/donejs/docs/theme/templates","static":"/Users/kevin/dev/donejs/docs/theme/static","forceBuild":true,"generators":["html"],"docConfigDest":"../documentjs.json","project":{}};
 	</script>
 
 	

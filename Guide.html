@@ -228,7 +228,7 @@
 <p>In this section, we will install DoneJS and generate a new application.</p>
 <h3>Install DoneJS</h3>
 <p>To get started, let's install the DoneJS command line utility globally:</p>
-<pre><code>npm install -g donejs
+<pre><code>npm install -g donejs@0.9
 </code></pre>
 <h3>Generate the application</h3>
 <p>Then we'll create a new DoneJS application called <code>donejs-chat</code>:</p>
@@ -436,7 +436,7 @@ Now each component is being dynamically loaded while navigating between the home
 <h3>Install bit-tabs</h3>
 <p>On the homepage, let's install and add <a href="https://github.com/bitovi-components/bit-tabs">bit-tabs</a>, a simple declarative tabs widget.</p>
 <p>Run:</p>
-<pre><code>npm install bit-tabs --save
+<pre><code>npm install bit-tabs@0.2 --save
 </code></pre>
 <h3>Update the page</h3>
 <p>Then, import the unstyled custom elements from <code>bit-tabs/unstyled</code> (unstyled because we will use Bootstrap's styles) and add <code>&lt;bit-tabs&gt;</code> and <code>&lt;bit-panel&gt;</code> elements to the template.</p>
@@ -658,7 +658,7 @@ This will listen to <code>messages &lt;event&gt;</code> events sent by the serve
 <p>When you deploy for the first time it will ask you to authorize, but first we need to configure the project.</p>
 <h3>Configure DoneJS</h3>
 <p>Now we can add the Firebase deployment configuration to our <code>package.json</code> like this:</p>
-<pre><code>donejs add firebase
+<pre><code>donejs add firebase@1
 </code></pre>
 <p>When prompted, enter the name of the application created when you set up the Firebase app. Before you can deploy your app you need to login and authorize the Firebase tools, which you can do with:</p>
 <pre><code>node_modules/.bin/firebase login
@@ -688,7 +688,7 @@ We'll be building an iOS app if you are a Mac user, and an Android app if you're
 <p>We will use these tools to create an iOS application that can be tested in the iOS simulator.</p>
 <p>Windows users should install the <a href="https://developer.android.com/sdk/index.html">Android Studio</a>, which gives all of the tools we need.</p>
 <p>Now we can install the DoneJS Cordova tools with:</p>
-<pre><code>donejs add cordova
+<pre><code>donejs add cordova@0.2
 </code></pre>
 <p>Depending on your operating system you can accept most of the defaults, unless you would like to build for Android, which needs to be selected from the list of platforms.</p>
 <p>To run the Cordova build and launch the simulator we can now run:</p>
@@ -699,7 +699,7 @@ We'll be building an iOS app if you are a Mac user, and an Android app if you're
 <p>Windows users will get instructions to download the latest version of the platform and to create a Virtual Device. Follow the instructions and then re-do the build. This will only happen the first time you build for Cordova.</p>
 <h3>NW.js</h3>
 <p>To set up the desktop build, we have to add it to our application like this:</p>
-<pre><code>donejs add nw
+<pre><code>donejs add nw@0.2
 </code></pre>
 <p>We can answer most prompts with the default except for the version which needs to be set to the latest <strong>stable version</strong>. Set the version prompt to <code>0.12.3</code>.</p>
 <p><img src="static/img/donejs-nw1.png" alt="nw build" style="box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2); border-radius: 5px; border: 1px #E7E7E7 solid;" /></p>
@@ -870,7 +870,7 @@ And rebuild:</p>
 	
 
 	<script type="text/javascript">
-		var docObject = {"type":"page","name":"Guide","src":"docs/guides/guide.md","description":"In this guide, we will create [chat.donejs.com](http://chat.donejs.com), a small real-time chat application with a homepage showing a tabs widget and a messages page that lets us send and receive messages in real-time: \n<img src=\"static/img/donejs-chat.gif\" alt=\"chat.donejs.com\" style=\"box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2); border-radius: 5px; border: 1px #E7E7E7 solid;\" />\n\nIn the first part of this guide we will install DoneJS, [generate a new application](Features.html#section=section_Generators) and start a server that provides [hot module swapping](Features.html#section=section_HotModuleSwapping) and [server-side rendering](Features.html#section=section_ServerSideRendered). We will then [import Bootstrap from NPM](Features.html#section=section_NPMPackages), create our [own custom HTML elements](Features.html#section=section_CustomHTMLElements) and [set up routing](Features.html#section=section_PrettyURL_swithPushstate) between the homepage and the chat messages page. After that, we will complete both pages by adding a tabs widget to the homepage and the ability to send messages and [receive real-time updates](Features.html#section=section_RealTimeConnected).\n\nIn the final parts of the guide we will make an [optimized, progressively loaded production build](Features.html#section=section_Progressiveloading) and [deploy it to a CDN](Features.html#section=section_DeploytoaCDN). We will conclude with creating a [mobile and desktop](Features.html#section=section_iOS_Android_andDesktopBuilds) version of the application.\n\nIf you run into any problems, let us know [on Gitter](https://gitter.im/donejs/donejs), we're happy to help out.","title":"Quick start guide","parent":"DoneJS","hideSidebar":true,"outline":{"depth":2,"tag":"ol"},"comment":" ","glob":{"pattern":"docs/**/*.{md,mustache}","ignore":"{node_modules,bower_components}/**/*","cwd":"/Library/WebServer/Documents/GitHub/donejs"},"dest":"/Library/WebServer/Documents/GitHub/donejs/site","ignoreTemplateRender":true,"templates":"/Library/WebServer/Documents/GitHub/donejs/docs/theme/templates","static":"/Library/WebServer/Documents/GitHub/donejs/docs/theme/static","forceBuild":true,"generators":["html"],"docConfigDest":"../documentjs.json","project":{}};
+		var docObject = {"type":"page","name":"Guide","src":"docs/guides/guide.md","description":"In this guide, we will create [chat.donejs.com](http://chat.donejs.com), a small real-time chat application with a homepage showing a tabs widget and a messages page that lets us send and receive messages in real-time: \n<img src=\"static/img/donejs-chat.gif\" alt=\"chat.donejs.com\" style=\"box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2); border-radius: 5px; border: 1px #E7E7E7 solid;\" />\n\nIn the first part of this guide we will install DoneJS, [generate a new application](Features.html#section=section_Generators) and start a server that provides [hot module swapping](Features.html#section=section_HotModuleSwapping) and [server-side rendering](Features.html#section=section_ServerSideRendered). We will then [import Bootstrap from NPM](Features.html#section=section_NPMPackages), create our [own custom HTML elements](Features.html#section=section_CustomHTMLElements) and [set up routing](Features.html#section=section_PrettyURL_swithPushstate) between the homepage and the chat messages page. After that, we will complete both pages by adding a tabs widget to the homepage and the ability to send messages and [receive real-time updates](Features.html#section=section_RealTimeConnected).\n\nIn the final parts of the guide we will make an [optimized, progressively loaded production build](Features.html#section=section_Progressiveloading) and [deploy it to a CDN](Features.html#section=section_DeploytoaCDN). We will conclude with creating a [mobile and desktop](Features.html#section=section_iOS_Android_andDesktopBuilds) version of the application.\n\nIf you run into any problems, let us know [on Gitter](https://gitter.im/donejs/donejs), we're happy to help out.","title":"Quick start guide","parent":"DoneJS","hideSidebar":true,"outline":{"depth":2,"tag":"ol"},"comment":" ","glob":{"pattern":"docs/**/*.{md,mustache}","ignore":"{node_modules,bower_components}/**/*","cwd":"/Users/kevin/dev/donejs"},"dest":"/Users/kevin/dev/donejs/site","ignoreTemplateRender":true,"templates":"/Users/kevin/dev/donejs/docs/theme/templates","static":"/Users/kevin/dev/donejs/docs/theme/static","forceBuild":true,"generators":["html"],"docConfigDest":"../documentjs.json","project":{}};
 	</script>
 
 	
